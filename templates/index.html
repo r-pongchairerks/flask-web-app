@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Please rate your service</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <img src="../static/logo.png" alt="Lexus" class="logo">
+            <!-- Add TODO message -->
+            {% if message %}
+            <p class="message">{{ message | safe }}</p>
+            {% endif %}
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <h3>Customer Name</h3>
+                    <input type="text" name="customer" placeholder="Name of Vehicle owner"/>
+                </div>
+                <div class="form-group">
+                    <h3>Dealer</h3>
+                    <select name="dealer">
+                        <option value="">Select Dealer</option>
+                        <option value="Tom and Jerry">Tom and Jerry</option>
+                        <option value="Julia Robert">Julia Robert</option>
+                        <option value="Brad Pitt">Brad Pitt</option>
+                        <option value="Jennifer Aniston">Jennifer Aniston</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <h3>Please rate your dealer</h3>
+                    <input type="radio" name="rating" value="1">1
+                    <input type="radio" name="rating" value="2">2
+                    <input type="radio" name="rating" value="3">3
+                    <input type="radio" name="rating" value="4">4
+                    <input type="radio" name="rating" value="5">5
+                    <input type="radio" name="rating" value="6">6
+                    <input type="radio" name="rating" value="7">7
+                    <input type="radio" name="rating" value="8">8
+                    <input type="radio" name="rating" value="9">9
+                    <input type="radio" name="rating" value="10" checked>10
+                </div>
+                <div class="form-group">
+                    <h3>Comments about your experience</h3>
+                    <textarea
+                        name="comments"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        placeholder="Tell us what you liked and/or did not like"></textarea>
+                    <input type="submit" value="Submit" class="btn"/>
+                </div>
+            </form>
+        </div>
+        
+        
+    </body>
+</html>
